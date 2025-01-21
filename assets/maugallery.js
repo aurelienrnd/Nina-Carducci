@@ -2,13 +2,13 @@
   $.fn.mauGallery = function(options) {
 
     var options = $.extend($.fn.mauGallery.defaults, options);
-    var tagsCollection = [];
+    var tagsCollection = []; // data list des IMG a afficher dans la gallery
 
     return this.each(function() {
       //Cree une Div .gallery-items-row
       $.fn.mauGallery.methods.createRowWrapper($(this));
 
-      //createLightBox
+      //Cree la modal
       if (options.lightBox) {
         $.fn.mauGallery.methods.createLightBox($(this), options.lightboxId, options.navigation);
       }
@@ -16,24 +16,25 @@
       // Listeners
       $.fn.mauGallery.listeners(options);
 
-      // Pour chaque .gallery-item,
+      // Pour chaque <img> dans .gallery,
       $(this).children(".gallery-item").each(function(index) { 
         //Ajout de la class img-fluid
         $.fn.mauGallery.methods.responsiveImageItem($(this)); 
-        //Ajout dans .gallery-items-row
+        //Ajout a la Div .gallery-items-row
         $.fn.mauGallery.methods.moveItemInRowWrapper($(this));
         //et le wrap dans une Div .item-column
         $.fn.mauGallery.methods.wrapItemInColumn($(this), options.columns);
 
+        // recuperation de la data gallery-tag de chaque IMG
         var theTag = $(this).data("gallery-tag");
 
-        //si showTags est true et que le tag n'est pas deja dans le tableau, je l'ajoute
+        //si tag n'est pas deja dans le tableaux tagsCollection, je l'ajoute
         if (options.showTags && theTag !== undefined && tagsCollection.indexOf(theTag) === -1) {
           tagsCollection.push(theTag);
         }
       });
 
-      //j'ajoute les boutons de filtre
+      //ajoute des boutons de filtre
       if (options.showTags) {
         $.fn.mauGallery.methods.showItemTags($(this), options.tagsPosition, tagsCollection);
       }
@@ -97,7 +98,7 @@
   /********** Fonctions **********/
   $.fn.mauGallery.methods = {
 
-    /** Cree une Div .gallery-items-row 
+    /** Cree une Div .gallery-items-row dans element
      * @param {HTMLElement} element
     */
     createRowWrapper(element) {
@@ -109,17 +110,18 @@
 
     /** Wrap un element dans une Div .item-column
      * @param {HTMLElement} element
-     * @param {Array} columns
+     * @param {Object} columns
     */
     wrapItemInColumn(element, columns) {
+      // si columns est un nombre, je le wrap dans une div item-column
       if (columns.constructor === Number) {
-        // si columns est un nombre, je le wrap dans une div item-column
         element.wrap(
           `<div class='item-column mb-4 col-${Math.ceil(12 / columns)}'></div>`
         );
+      } 
 
-      } else if (columns.constructor === Object) {
-        // si columns est un objet, pour chaque propriete de columns si elle existe je luis creer une class col- et je l'ajoute a la div
+      // si columns est un objet, pour chaque propriete de columns si elle existe je luis creer une class col- puis je l'ajoute a la div
+      else if (columns.constructor === Object) {
         var columnClasses = "";
         if (columns.xs) {
           columnClasses += ` col-${Math.ceil(12 / columns.xs)}`;
@@ -137,9 +139,10 @@
           columnClasses += ` col-xl-${Math.ceil(12 / columns.xl)}`;
         }
         element.wrap(`<div class='item-column mb-4${columnClasses}'></div>`);
-
-      } else {
-        // si columns n'est pas un nombre ou un objet, console.error
+      } 
+      
+      // si columns n'est pas un nombre ou un objet, console.error
+      else {
         console.error(
           `Columns should be defined as numbers or objects. ${typeof columns} is not supported.`
         );
@@ -297,9 +300,9 @@
      * @param {Array} tags
     */
     showItemTags(gallery, position, tags) {
-      // creation du bouton de filtre Tous <li><span></span></li>
+      // creation du bouton de filtre Tous, et incrementation de sa data = "all"
       var tagItems = '<li class="nav-item"><span class="nav-link active active-tag"  data-images-toggle="all">Tous</span></li>';
-      // creation du bouton des autre bouton filtre <li><span></span></li>
+      // creation des autre bouton filtre et incrementation de leur data = tag[i].value
       $.each(tags, function(index, value) {
         tagItems += `<li class="nav-item active"><span class="nav-link"  data-images-toggle="${value}">${value}</span></li>`;
       });
