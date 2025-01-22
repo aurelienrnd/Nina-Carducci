@@ -171,7 +171,7 @@
      * @param {String} lightboxId 
      */
     openLightBox(element, lightboxId) {
-      // Recherche .lightboxImage est lui attribue l'attribut src de l'element puis ouvre la modal
+      // Recherche la balise IMG dans la modal est lui attribue le bon url avant d'ouvrir la modal
       $(`#${lightboxId}`).find(".lightboxImage").attr("src", element.attr("src"));
       $(`#${lightboxId}`).modal("toggle");
     },
@@ -181,7 +181,7 @@
     */
     prevImage() {
       let activeImage = null;
-      // pour chaque image de la galerie, si img.gallery-item === .lightboxImage , activeImage = img.gallery-item
+      // pour chaque image de la galerie, si une image === l'image de la modal alors activeImage = cette image
       $("img.gallery-item").each(function() {
         if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
           activeImage = $(this);
@@ -190,7 +190,7 @@
 
       let activeTag = $(".tags-bar span.active-tag").data("images-toggle");
       let imagesCollection = [];
-      // si activeTag egal 'all', j'ajoute chaque .item-column au tableaux imagesCollection
+      // si le btn filtre all est activer, j'ajoute chaque .item-column au tableaux imagesCollection
       if (activeTag === "all") {
         $(".item-column").each(function() {
           if ($(this).children("img").length) {
@@ -198,7 +198,7 @@
           }
         });
       } 
-      // si activeTag n'est pas egal a 'all', j'ajoute chaque .item-column qui a la meme img data-gallery-tag que activeTag au tableaux imagesCollection
+      // si non un autre btn filtre est activer, alors si le btn data tag === au img data tag de .item-column, je le rajoute au tableaux imagesCollection 
       else {
         $(".item-column").each(function() {
           if ($(this).children("img").data("gallery-tag") === activeTag) {
@@ -212,7 +212,7 @@
       // pour chaque image de imagesCollection, si l'image active est egal a l'image de l'index i, je set l'index a i
       $(imagesCollection).each(function(i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
-          index = i ;
+          index = i-1; //AJOUT DE -1 POUR CORRIGER LE BUG IMG PRECEDENTE
         }
       });
 
@@ -257,7 +257,7 @@
       // pour chaque image de imagesCollection, si l'image active est egal a l'image de l'index i, je set l'index a i
       $(imagesCollection).each(function(i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
-          index = i;
+          index = i+1; //AJOUT DE +1 POUR CORRIGER LE BUG IMG 
         }
       });
 
