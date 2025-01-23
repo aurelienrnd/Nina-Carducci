@@ -330,13 +330,12 @@
 
       // je retire la class active-tag de l'element actif et je l'ajoute a l'element cliquer
       $(".active-tag").removeClass("active active-tag");
-      $(this).addClass("active-tag");
+      $(this).addClass("active active-tag"); // AJOUT DE LA CLASSE ACTIVE POUR CORRECTION BUG (fond de couleur dorée)
 
       var tag = $(this).data("images-toggle");
 
-      //  
+      //je cache tout les .item-column
       $(".gallery-item").each(function() {
-        //je cache tout les .item-column
         $(this).parents(".item-column").hide();
 
         //si le tag est 'all', je montre tout les .item-column,
