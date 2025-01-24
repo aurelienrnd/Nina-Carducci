@@ -249,8 +249,14 @@ input[type="submit"] {
 footer a {
 	text-decoration: none;
 	color: black;
-
 }
+
+.info {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
 
 @media all and (max-width: 1180px) {
 	.picture {
