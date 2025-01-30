@@ -10,7 +10,7 @@
 	<meta property="og:type" content="website"/>
 	<meta property="og:title" content="Nina Carducci, photographe"/>
 	<meta property="og:description" content="Nina Carducci, photographe à Bordeaux, shootings pour entreprises, événements, portraits. Retouches et albums photo. Une question devis ?">
-	<meta property="og:url" content="https://nina-carducci-photographe.netlify.app/"/> <!-- adress site a verifier -->
+	<meta property="og:url" content="https://nina-carducci-photographe.netlify.app/"/>
 	<meta property="og:image" content="./assets/images/og-twitter-schema.webp" /> 
 	<meta property="og:image:alt" content="Homme en costume traversant un passage piéton pour un rendez-vous professionnel" />
 	<meta property="og:locality" content="Bordeux" />
@@ -22,7 +22,7 @@
 	<meta name="twitter:description" content="Nina Carducci, photographe à Bordeaux, shootings pour entreprises, événements, portraits. Retouches et albums photo. Une question devis ?" />
 	<meta name="twitter:image" content="./assets/images/og-twitter-schema.webp" />
 	<meta name="twitter:image:alt" content="Homme en costume traversant un passage piéton pour un rendez-vous professionnel" />
-	<meta name="twitter:site" content="https://nina-carducci-photographe.netlify.app/" /><!-- adress site a verifier -->
+	<meta name="twitter:site" content="https://nina-carducci-photographe.netlify.app/" />
 
 	<link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
 	<link rel="stylesheet" href="./assets/style.min.css">
@@ -32,7 +32,7 @@
 	
 	<script src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-	<script src="./assets/maugallery.min.js"></script>
+	<script src="./assets/maugallery.js"></script>
 	<script src="./assets/scripts.min.js"></script>
 </head>
 
@@ -214,26 +214,27 @@
 	</article>
 </footer>
 
-<!-- ajout de schema.org --> <!-- balise url -->
+<!-- ajout de schema.org -->
 <script type="application/ld+json">
 	{
-		"@context": "https://schema.org",
-		"@type": "LocalBusiness",
-		"name": "Nina Carducci",
-		"description": "Nina Carducci, photographe à Bordeaux, shootings pour entreprises, événements, portraits. Retouches et albums photo. Une question devis ?",
-		"url": "https://nina-carducci-photographe.netlify.app/",
-		"telephone": "+330556677889",
-		"address": {
-			"@type": "PostalAddress",
-			"streetAddress": "68 avenue Alsace-Lorraine",
-			"addressLocality": "Bordeaux",
-			"addressRegion": "Nouvelle-Aquitaine",
-			"postalCode": "33200",
-			"addressCountry": "FR"
-		},
-		"openingHours": "Mo-Fr 10:00-19:00",
-		"image": "./assets/images/og-twitter-schema.webp"
+	  "@context": "https://schema.org",
+	  "@type": "LocalBusiness",
+	  "name": "Nina Carducci",
+	  "description": "Nina Carducci, photographe à Bordeaux, shootings pour entreprises, événements, portraits. Retouches et albums photo. Une question devis ?",
+	  "url": "https://nina-carducci-photographe.netlify.app/",
+	  "telephone": "+33 5 56 67 78 89",
+	  "address": {
+		"@type": "PostalAddress",
+		"streetAddress": "68 avenue Alsace-Lorraine",
+		"addressLocality": "Bordeaux",
+		"addressRegion": "Nouvelle-Aquitaine",
+		"postalCode": "33200",
+		"addressCountry": "FR"
+	  },
+	  "openingHours": ["Mo-Fr 10:00-19:00"],
+	  "image": "https://nina-carducci-photographe.netlify.app/assets/images/og-twitter-schema.webp",
+	  "priceRange": "50€ - 400€"
 	}
-</script>
+	</script>
 </body>
 </html>
