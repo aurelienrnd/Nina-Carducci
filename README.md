@@ -62,7 +62,7 @@ Optimisation d’un portfolio pour photographe
   - Ajout des balises <header>, <main> et <footer>. 
   - Ajout de plusieurs balises <section> et <article> pour structurer le contenu. 
   - Ajout de la balise <nav> pour les éléments de navigation. 
-  - Réorganisation des titres dans un ordre logique : un <h1> pour l’ensemble de la page, suivi de <h2>, <h3> et <h4>.
+  - Réorganisation des titres dans un ordre logique un <h1> pour l’ensemble de la page, suivi de <h2>, <h3> et <h4>.
 
 - Modification du contraste pour une meilleure visibilité et respect des normes WCAG AA. 
   - Modification de la propriété background-color de la classe CSS .nav-pills .nav-link.active et .nav-pills .show > .nav-link de #BEB45A à #8A7500. 
