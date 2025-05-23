@@ -37,32 +37,32 @@ Optimisation d’un portfolio pour photographe
 
 ### SEO
 - Amélioration du référencement
-  - L’ajout d’une balise <title> à la ligne 4 comprenant 64 caractères. 
-  - Ajout d’une balise <meta description> à la ligne 6 comprenant 137 caractères. 
-  - D’une balise <html lang="fr-FR"> à la ligne 2 pour préciser la langue utilisée. 
+  - L’ajout d’une balise `<title>` à la ligne 4 comprenant 64 caractères. 
+  - Ajout d’une balise `<meta description>` à la ligne 6 comprenant 137 caractères. 
+  - D’une balise `<html lang="fr-FR">` à la ligne 2 pour préciser la langue utilisée. 
   - Ajout d’attributs alt pour chaque image du site.
 
 - Référencement local et intégration des réseaux sociaux. 
   - Création d’un footer avec les info de localisation, de contact et les horaires. 
-  - Création de données structurées avec une balise <script> à la ligne 218. 
-  - Ajout de balises <meta property="og:type"> pour utiliser Open Graph,  ligne 10 à 18. 
-  - Ajout de balises <meta name="twitter"> pour utiliser Twitter Card, de la ligne 20 à 25.
+  - Création de données structurées avec une balise `<script>` à la ligne 218. 
+  - Ajout de balises `<meta property="og:type">` pour utiliser Open Graph,  ligne 10 à 18. 
+  - Ajout de balises `<meta name="twitter">` pour utiliser Twitter Card, de la ligne 20 à 25.
 
 ### Accessibilité
 - Ajout de plusieurs attributs manquants. 
   - Ajout des attributs alt sur les images pour afficher une description. 
-  - Ajout de l’attribut for sur les labels du formulaire pour les lier à leur balise <input>. 
-  - Ajout de l’attribut lang="fr-FR" dans la balise <html> pour spécifier la langue utilisée. 
+  - Ajout de l’attribut for sur les labels du formulaire pour les lier à leur balise `<input>`. 
+  - Ajout de l’attribut lang="fr-FR" dans la balise `<html>` pour spécifier la langue utilisée. 
   -Ajout de placeholder dans les balise input du formulaire
 
 - Ajout de balises. 
-  - Ajout d’une balise <title> pour fournir un contexte sur le contenu de la page.
+  - Ajout d’une balise `<title>` pour fournir un contexte sur le contenu de la page.
 
 - Modification de balises. 
-  - Ajout des balises <header>, <main> et <footer>. 
-  - Ajout de plusieurs balises <section> et <article> pour structurer le contenu. 
-  - Ajout de la balise <nav> pour les éléments de navigation. 
-  - Réorganisation des titres dans un ordre logique un <h1> pour l’ensemble de la page, suivi de <h2>, <h3> et <h4>.
+  - Ajout des balises `<header>`, `<main>` et `<footer>`. 
+  - Ajout de plusieurs balises `<section>` et `<article>` pour structurer le contenu. 
+  - Ajout de la balise `<nav>` pour les éléments de navigation. 
+  - Réorganisation des titres dans un ordre logique un `<h1>` pour l’ensemble de la page, suivi de `<h2>`, `<h3>` et `<h4>`.
 
 - Modification du contraste pour une meilleure visibilité et respect des normes WCAG AA. 
   - Modification de la propriété background-color de la classe CSS .nav-pills .nav-link.active et .nav-pills .show > .nav-link de #BEB45A à #8A7500. 
